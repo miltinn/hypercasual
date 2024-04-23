@@ -1,0 +1,1 @@
+Hypercasual is a mobile game where you must evade obstacles while collecting coins. Hypercasual is a style of platform mobile games where you keep the mechanics simple and fun, so any kind of player can quickly understand how the game works.
