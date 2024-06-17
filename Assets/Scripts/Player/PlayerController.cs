@@ -25,11 +25,16 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Coin Setup")]
     public GameObject coinCollector;
 
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
+
     //privates
     private bool _canRun;
     private Vector3 _pos;
     private Vector3 _startPosition;
     private float _currentSpeed;
+    private float _baseSpeedToAnimation = 7;
+
     private void Start()
     {
         _startPosition = transform.position;
@@ -52,27 +57,38 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == tagToCheckEnemy)
         {
-            if (!invencible) EndGame();
+            if (!invencible)
+            {
+                MoveBack(transform); //could use collision.transform so that the object moves instead of the player
+                EndGame(AnimatorManager.AnimationType.DEAD);
+            }
         }
+    }
+
+    private void MoveBack(Transform t)
+    {
+        t.DOMoveZ(-1f, .3f).SetRelative();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == tagToCheckEndLine)
+        if (other.transform.tag == tagToCheckEndLine) //win condition (finish line)
         {
-            if (!invencible) EndGame();
+            EndGame();
         }
     }
 
-    private void EndGame()
+    private void EndGame(AnimatorManager.AnimationType animationType = AnimatorManager.AnimationType.IDLE)
     {
         _canRun = false;
         endScreen.SetActive(true);
+        animatorManager.Play(animationType);
     }
 
     public void startToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.AnimationType.RUN, _currentSpeed / _baseSpeedToAnimation);
     }
 
     #region POWER UPS
@@ -113,7 +129,7 @@ public class PlayerController : Singleton<PlayerController>
         transform.DOMoveY(_startPosition.y, animationDuration);
     }
 
-    
+
     public void ChangeCoinCollectorSize(float amount)
     {
         coinCollector.transform.localScale = Vector3.one * amount;

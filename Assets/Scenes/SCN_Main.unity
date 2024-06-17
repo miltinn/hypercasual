@@ -1258,13 +1258,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 163636808}
   lerpSpeed: 9
-  speed: 5
+  speed: 7
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
   endScreen: {fileID: 1607806575}
   invencible: 0
   uiTextPowerUp: {fileID: 1796707337}
   coinCollector: {fileID: 1929388733}
+  animatorManager: {fileID: 1017839953}
 --- !u!1 &547152752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2025,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.15864283, y: -0.07847991, z: 0.012651036, w: 0.98413074}
+  m_LocalRotation: {x: 0.15864281, y: -0.0784799, z: 0.012651035, w: 0.98413074}
   m_LocalPosition: {x: 2.08, y: 4.2562323, z: -12.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2127,6 +2128,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4072818804019915017, guid: 5bddaed21781e2b41b0266d2c821daad, type: 3}
   m_PrefabInstance: {fileID: 985369871}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1017839953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 246366040566416646, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 16973559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aec51d718e3d2145b9cbf93186ef67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1073886063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2253,7 +2265,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211672741}
-  m_LocalRotation: {x: 0.15864283, y: -0.07847991, z: 0.012651036, w: 0.98413074}
+  m_LocalRotation: {x: 0.15864281, y: -0.0784799, z: 0.012651035, w: 0.98413074}
   m_LocalPosition: {x: 2.08, y: 4.2562323, z: -12.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2303,7 +2315,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 233986725919613824, guid: 890bb5d6792150a40a4e00c0ee380e9c, type: 3}
       propertyPath: m_Size.y
-      value: 4
+      value: 9.843769
+      objectReference: {fileID: 0}
+    - target: {fileID: 233986725919613824, guid: 890bb5d6792150a40a4e00c0ee380e9c, type: 3}
+      propertyPath: m_Center.y
+      value: -1.1169308
       objectReference: {fileID: 0}
     - target: {fileID: 233986725919613824, guid: 890bb5d6792150a40a4e00c0ee380e9c, type: 3}
       propertyPath: m_IsTrigger
@@ -2862,7 +2878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.84}
+  m_AnchoredPosition: {x: 0, y: 1.69}
   m_SizeDelta: {x: 2.7866, y: 0.3673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796707337
