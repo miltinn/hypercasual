@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: dd29390b8ff5db342bb424cd6756d999, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.5117193, g: 0.6479491, b: 0.86767673, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -548,7 +548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163636803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 723822538}
@@ -679,7 +679,8 @@ MonoBehaviour:
   levelPieceBasedSetups:
   - {fileID: 11400000, guid: 4a878078e01bef546bedd665cf5fd455, type: 2}
   - {fileID: 11400000, guid: a0abea5a14ed78a489ba1e8efbdc9b12, type: 2}
-  timeBetweenPieces: 0.3
+  - {fileID: 11400000, guid: 1fda75d99f94fda46830eb47da2b3058, type: 2}
+  timeBetweenPieces: 0.1
   _index: 1
 --- !u!1 &475344132
 GameObject:
@@ -887,7 +888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511672042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.088, z: 0.048568}
+  m_LocalPosition: {x: 12, y: -0.088, z: 0.048568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1796707336}
@@ -1397,8 +1398,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.15864281, y: -0.0784799, z: 0.012651035, w: 0.98413074}
-  m_LocalPosition: {x: 2.08, y: 4.2562323, z: -12.91}
+  m_LocalRotation: {x: 0.15864283, y: -0.07847991, z: 0.012651036, w: 0.98413074}
+  m_LocalPosition: {x: 14.08, y: 4.2562323, z: -12.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1508,8 +1509,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211672741}
-  m_LocalRotation: {x: 0.15864281, y: -0.0784799, z: 0.012651035, w: 0.98413074}
-  m_LocalPosition: {x: 2.08, y: 4.2562323, z: -12.91}
+  m_LocalRotation: {x: 0.15864283, y: -0.07847991, z: 0.012651036, w: 0.98413074}
+  m_LocalPosition: {x: 14.08, y: 4.2562323, z: -12.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475344133}
@@ -1907,6 +1908,65 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1815741525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815741526}
+  - component: {fileID: 1815741527}
+  m_Layer: 0
+  m_Name: ColorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1815741526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815741525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.636159, y: 2.1760046, z: 4.584291}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815741527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815741525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc465ac20933e254b8a3a4f0bc4bb1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 49e757eaed111404c877951f9341a4c0, type: 2}
+  - {fileID: 2100000, guid: d635e361e0b5615478e6a33a4d609edc, type: 2}
+  colorSetups:
+  - artType: 0
+    colors:
+    - {r: 0.09549664, g: 0.6981132, b: 0.57931584, a: 0}
+    - {r: 0.7924528, g: 0.78870445, b: 0.04111784, a: 0}
+  - artType: 1
+    colors:
+    - {r: 0.69803923, g: 0.09411763, b: 0.58896685, a: 0}
+    - {r: 0.7921569, g: 0.5653026, b: 0.039215676, a: 0}
+  - artType: 2
+    colors:
+    - {r: 0.09411763, g: 0.69803923, b: 0.11011276, a: 0}
+    - {r: 0.7921569, g: 0.0776283, b: 0.039215676, a: 0}
 --- !u!1 &1929388733
 GameObject:
   m_ObjectHideFlags: 0
