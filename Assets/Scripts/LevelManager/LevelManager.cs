@@ -96,7 +96,6 @@ public class LevelManager : MonoBehaviour
 
         _currSetup = levelPieceBasedSetups[_index];
 
-        ColorManager.Instance.ChangeColorByType(_currSetup.artType);
 
         for (int i = 0; i < _currSetup.piecesStartNumber; i++)
         {
@@ -116,6 +115,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenPieces);
         }
 
+        ColorManager.Instance.ChangeColorByType(_currSetup.artType);
         
     }
     #endregion
