@@ -29,12 +29,17 @@ public class ItemCollectableBase : MonoBehaviour
     }
 
     //virtual é para override de classes
+
+    protected virtual void HideItems()
+    {
+        if (graphicItem != null) graphicItem.SetActive(false);
+        Invoke(nameof(HideObject), itemHideTime);
+    }
+
     protected virtual void Collect()
     {
-        if(graphicItem != null)  graphicItem.SetActive(false); 
-        Invoke(nameof(HideObject), itemHideTime);
-        
-        //gameObject.SetActive(false); 
+
+        HideItems();
         OnCollect();
         
     }

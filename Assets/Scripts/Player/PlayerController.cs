@@ -10,6 +10,7 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Lerp")]
     public Transform target;
     public float lerpSpeed = 1f;
+    
 
     public float speed = 1f;
     public string tagToCheckEnemy = "Enemy";
@@ -28,18 +29,39 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    
+
+    [SerializeField] private BounceHelper _bounceHelper;
+    [SerializeField] private PlayerScaleAnimationManager _playerScaleHelper;
+
+
     //privates
     private bool _canRun;
     private Vector3 _pos;
     private Vector3 _startPosition;
     private float _currentSpeed;
     private float _baseSpeedToAnimation = 7;
+    
 
     private void Start()
     {
         _startPosition = transform.position;
         ResetSpeed();
+        //gameObject.transform.localScale = Vector3.zero;
+        
     }
+
+    public void Bounce()
+    {
+        if(_bounceHelper != null)
+            _bounceHelper.Bounce();
+    }
+    public void LerpScale()
+    {
+        if (_playerScaleHelper != null)
+            _playerScaleHelper.LerpScale();
+    }
+
 
     void Update()
     {
@@ -51,6 +73,8 @@ public class PlayerController : Singleton<PlayerController>
 
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
         transform.Translate(transform.forward * _currentSpeed * Time.deltaTime);
+
+        
     }
 
     private void OnCollisionEnter(Collision collision) //defeat condition (collided with enemy)
