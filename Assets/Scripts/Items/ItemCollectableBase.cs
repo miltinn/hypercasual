@@ -15,7 +15,7 @@ public class ItemCollectableBase : MonoBehaviour
 
     private void Awake()
     {
-        if (particleSystem != null) particleSystem.transform.SetParent(null);
+        //if (particleSystem != null) particleSystem.transform.SetParent(null);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -52,7 +52,11 @@ public class ItemCollectableBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-        if(particleSystem != null) particleSystem.Play();
+        if(particleSystem != null) 
+        { 
+            particleSystem.transform.SetParent(null); //quando a moeda é coletada, ela é deletada. Para que a animação seja vista, é necessário mudar o Parent da particula.
+            particleSystem.Play(); 
+        }
         if(audioSource != null) audioSource.Play();
     }
 }
